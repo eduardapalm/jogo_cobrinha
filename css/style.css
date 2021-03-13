@@ -1,8 +1,56 @@
-body{
-    height: 95vh;
-    width: 95;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+
+* {
+    padding: 0;
+    margin: 0%;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Gloria Hallelujah', cursive;
 }
+
+body {
+    width: 100%;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(rgba(212, 20, 20, 0.658), rgba(212, 20, 20, 0.72) 100%), url('../img/bg.jpg');
+}
+
+header {
+    background-color: black;
+    width: 100%;
+    margin-bottom: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    display: none;
+    color: rgba(255, 165, 0, .25);
+}
+
+.logo {
+    margin-left: 40%;
+    color: blanchedalmond;
+}
+
+.logo span {
+    color: orangered;
+}
+ 
+main {
+    background-color: rgba(24, 24, 24, 0.966);
+    width: 60%;
+    height: 550px;
+    margin-bottom: 50px;
+    padding: 0;
+    border-radius: 20px;
+}
+
+#snake {
+    margin-left: 43%;
+    margin-top: 6%;
+    border-radius: 3px 3px 3px 3px;
+    width: 56%;
+} 
