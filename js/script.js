@@ -10,7 +10,6 @@ apple_img.src = "./img/apple.png";
 let background = document.getElementById("grass");
 let canvas = document.getElementById("snake"); //criar elemento que irá rodar o jogo
 let context = canvas.getContext("2d"); //....
-let dif = [];
 let box = 32;
 let snake = []; //criar cobrinha como lista, já que ela vai ser uma série de coordenadas, que quando pintadas, criam os quadradinhos
 snake[0] = {
@@ -125,7 +124,7 @@ function iniciarJogo() {
         
         food.x = Math.floor(Math.random() * 15 + 1) * box;
         food.y = Math.floor(Math.random() * 15 + 1) * box;
-        dif.pop(10);
+
         
     } 
     
@@ -135,7 +134,6 @@ function iniciarJogo() {
         banana.x = Math.floor(Math.random() * 15 + 1) * box;
         banana.y = Math.floor(Math.random() * 15 + 1) * box;
         snake.pop();
-        dif.push(5);
 
         if (snake.length <= 0) {
             clearInterval(jogo);
@@ -151,10 +149,6 @@ function iniciarJogo() {
     }
 
     snake.unshift(newHead); //método unshift adiciona como primeiro quadradinho da cobrinha
-    console.log(dif);
 }
 
-
-
-console.log(dif.length);
-let jogo = setInterval(iniciarJogo, 200-dif.length);
+let jogo = setInterval(iniciarJogo, 200);

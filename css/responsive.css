@@ -1,0 +1,21 @@
+@media (max-width: 700px) {
+    .score {
+        padding-top: 5px;
+        width: 16%;
+        height: 60%;
+    }
+    h1 {
+        font-size: 15px;
+    }
+    .score span {
+        font-size: 13px;
+    }
+
+    .botoes {
+
+        margin-left: 100px;
+        width: 20%;
+        height: 10%;
+
+    }
+}

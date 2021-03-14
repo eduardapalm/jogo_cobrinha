@@ -58,7 +58,7 @@ main {
     font-size: 20px;
     margin-left: 35%;
     margin-top: 0;
-    margin-bottom: 10px;
+    margin-bottom: 1px;
     background: rgb(233, 224, 186);
     width: 230px;
     height: 230px;
@@ -73,8 +73,8 @@ main {
     margin-left: 2%;
     margin-top: 100px;
     margin-bottom: 100px;
-    border-radius: 10px 10px 10px 10px;
     width: 50%;
+    border-radius: 10px 10px 10px 10px;
     border-right: 3px solid rgba(75, 75, 75, 0.733);
     border-bottom: 3px solid rgba(75, 75, 75, 0.733);
 } 
@@ -89,7 +89,7 @@ main {
     padding-top: 20px;
     padding-left: 50px;
     padding-right: 40px;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     background: rgb(248, 26, 26);
     width: 180px;
     height: 180px;
@@ -117,9 +117,20 @@ main {
     background-color: rgb(233, 224, 186);
     width: 200px;
     height: 100px;
-    margin-bottom: 50px;
+    margin-bottom: 15px;
     margin-left: 200px;
     border-radius: 15px;
     display: flex;
     flex-direction: row;
+    border-radius: 10px 10px 10px 10px;
+    border-right: 3px solid rgba(75, 75, 75, 0.733);
+    border-bottom: 3px solid rgba(75, 75, 75, 0.733);
+}
+h6 {
+    padding-left: 17px;
+    padding-bottom: 10px;
+    font-size: 13px;
+}
+.banana {
+    padding-left: 20px;
 }
