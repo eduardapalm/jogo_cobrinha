@@ -17,7 +17,32 @@
 
     <main>
         <img id="grass" src="img/grass.png" alt="">
+        <div class="info">
+            <div class="score">
+                <h1><span>SCORE:</span></h1>
+                <h1 id="pontos"></h1>
+            </div>
+            <div class="botoes">
+                <h1>BOTÕES:</h1>
+                <i class="fas fa-caret-square-up"></i>
+                <i class="fas fa-caret-square-down"></i>
+                <i class="fas fa-caret-square-right"></i>
+                <i class="fas fa-caret-square-left"></i>
+            </div>
+            <div class="frutas_pontos">
+                <div class="maca">
+                <h6>+10 pontos</h6>
+                <img class="frutas" src="img/big_apple.png" alt="">
+                </div>
+                <div class="banana">
+                <h6>-10 pontos</h6>
+                <img class="frutas" src="img/big_banana.png" alt="">
+                </div>
+            </div>
+        </div>
         <canvas id="snake" width="512" height="512"></canvas>
     </main>
+
+    <script src="https://kit.fontawesome.com/9d6274d44d.js" crossorigin="anonymous"></script>
 </body>
 </html>

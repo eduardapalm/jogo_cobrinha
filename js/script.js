@@ -1,12 +1,16 @@
 var head_img = new Image;
 var body_img = new Image;
 var apple_img = new Image;
+var banana_img = new Image;
+ 
+banana_img.src = "./img/banana.png";
 head_img.src = "./img/head.png";
 body_img.src = "./img/bodyy.png";
 apple_img.src = "./img/apple.png";
 let background = document.getElementById("grass");
 let canvas = document.getElementById("snake"); //criar elemento que irá rodar o jogo
 let context = canvas.getContext("2d"); //....
+let dif = [];
 let box = 32;
 let snake = []; //criar cobrinha como lista, já que ela vai ser uma série de coordenadas, que quando pintadas, criam os quadradinhos
 snake[0] = {
@@ -15,6 +19,10 @@ snake[0] = {
 }
 let direction = "right";
 let food = {
+    x: Math.floor(Math.random() * 15 + 1) * box,
+    y: Math.floor(Math.random() * 15 + 1) * box
+}
+let banana = {
     x: Math.floor(Math.random() * 15 + 1) * box,
     y: Math.floor(Math.random() * 15 + 1) * box
 }
@@ -46,6 +54,12 @@ function drawFood() {
     context.fillRect(food.x, food.y, box, box);
 }
 
+function drawBanana() {
+    banana_v = context.createPattern(banana_img, "repeat");
+    context.fillStyle = banana_v;
+    context.fillRect(banana.x, banana.y, box, box);
+}
+
 //quando um evento acontece, detecta e chama uma função
 document.addEventListener('keydown', update);
 
@@ -72,6 +86,8 @@ function update(event) {
     }
 }
 
+
+
 function iniciarJogo() {
 
     if (snake[0].x > 15 * box && direction == "right") snake[0].x = 0;
@@ -84,12 +100,15 @@ function iniciarJogo() {
             clearInterval(jogo);
             alert('Game Over :(');
             location.reload();
+
+
         }
     }
-
     criarBG();
     criarCobrinha();
     drawFood();
+    drawBanana();
+
 
     let snakeX = snake[0].x;
     let snakeY = snake[0].y;
@@ -99,12 +118,32 @@ function iniciarJogo() {
     if (direction == "up") snakeY -= box;
     if (direction == "down") snakeY += box;
 
+    
     if (snakeX != food.x || snakeY != food.y) {
         snake.pop(); //pop tira o último elemento da lista
     } else {
+        
         food.x = Math.floor(Math.random() * 15 + 1) * box;
         food.y = Math.floor(Math.random() * 15 + 1) * box;
-    }
+        dif.pop(10);
+        
+    } 
+    
+    if (snakeX != banana.x || snakeY != banana.y) {
+        
+    } else {
+        banana.x = Math.floor(Math.random() * 15 + 1) * box;
+        banana.y = Math.floor(Math.random() * 15 + 1) * box;
+        snake.pop();
+        dif.push(5);
+
+        if (snake.length <= 0) {
+            clearInterval(jogo);
+            alert("Game Over!");
+            location.reload();
+        }
+    } document.getElementById("pontos").innerHTML=(snake.length*10);
+    
 
     let newHead = {
         x: snakeX,
@@ -112,6 +151,10 @@ function iniciarJogo() {
     }
 
     snake.unshift(newHead); //método unshift adiciona como primeiro quadradinho da cobrinha
+    console.log(dif);
 }
 
-let jogo = setInterval(iniciarJogo, 100);
+
+
+console.log(dif.length);
+let jogo = setInterval(iniciarJogo, 200-dif.length);
